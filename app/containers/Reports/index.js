@@ -5,7 +5,7 @@ import { createStructuredSelector } from 'reselect'
 import { get } from 'lodash'
 import { Button } from 'reactstrap';
 
-class HomePage extends Component {
+class Reports extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +13,7 @@ class HomePage extends Component {
 
     this.props.getDistrict()
       .then(() =>
-        console.log("hello pakistan", this.props)
+        console.log("hello pakistan", get(this.props))
       )
   }
   render() {
@@ -35,4 +35,4 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(Actions.getDistrictsRequest(payload, resolve, reject))),
 
 })
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage)
+export default connect(mapStateToProps, mapDispatchToProps)(Reports)
