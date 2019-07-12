@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { get } from 'lodash';
-import { Button, Table } from 'reactstrap';
+import { Badge, Table } from 'reactstrap';
 import Actions from '../../redux/Actions';
 import MyNavbar from '../MyNavbar';
 
@@ -27,26 +27,26 @@ class AllReports extends Component {
     return (
       <div>
         <MyNavbar moveTo={this.moveto} />
-        <Table responsive>
+        <h2><Badge color="secondary">Reports</Badge></h2>
+        <Table bordered>
           <thead>
             <tr>
               <th>#</th>
-              <th>1</th>
-              <th>2</th>
-              <th>3</th>
-              <th>4</th>
-              <th>5</th>
-              <th>6</th>
-              <th>7</th>
-              <th>8</th>
-              <th>9</th>
-              <th>10</th>
-              <th>11</th>
-              <th>12</th>
-              <th>13</th>
-              <th>14</th>
-              <th>15</th>
-              <th>16</th>
+              <th>School Name</th>
+              <th>Report Created Date</th>
+              <th>Disagree</th>
+              <th>Agree</th>
+              <th>Removed Status</th>
+              <th>Removed By</th>
+              <th>Removed Date</th>
+              <th>Report Address</th>
+              <th>Report Date</th>
+              {/* <th>9</th> */}
+              <th>User Name</th>
+              <th>Phone Number</th>
+              <th>User Active Status</th>
+              <th>Authencity</th>
+              <th>Total Comments</th>
             </tr>
           </thead>
           <tbody>
@@ -62,12 +62,11 @@ class AllReports extends Component {
                 <td>{report.removed_date}</td>
                 <td>{report.report_address}</td>
                 <td>{report.report_date}</td>
-                <td>{report.report_text}</td>
+                {/* <td>{report.report_text}</td> */}
                 <td>{report.user.user_name}</td>
                 <td>{report.user.phone_number}</td>
                 <td>{report.user.is_active}</td>
                 <td>{report.authencity}</td>
-                <td>{report.total_comments}</td>
                 <td>{report.total_comments}</td>
               </tr>
             ))}

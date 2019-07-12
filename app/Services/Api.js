@@ -13,7 +13,7 @@ const create = () => {
 
   const authApi = axios.create({
     // baseURL: 'https://hoshyaar.herokuapp.com',
-    baseURL: 'http://2b5e406a.ngrok.io/',
+    baseURL: 'http://bfd0baf8.ngrok.io/',
     responseType: 'json',
     headers: {
       // 'Cache-Control': 'no-cache',
@@ -25,7 +25,7 @@ const create = () => {
 
   const api = axios.create({
     // base URL is read from the "constructor"
-    baseURL: 'http://2b5e406a.ngrok.io/api/v1',
+    baseURL: 'http://bfd0baf8.ngrok.io/api/v1',
     // baseURL: 'https://hoshyaar.herokuapp.com/api/v1',
 
     // here are some default headers
@@ -37,7 +37,7 @@ const create = () => {
   });
 
   const allReports = (payload, headers) => api.get('/reports', {}, { headers });
-  const allSchool = (payload, headers) => api.get('/schools', {}, { headers });
+  const allSchool = (payload, headers) => api.get('/schools/all_schools', {}, { headers });
   const getAllUsers = (payload, headers) => api.get('/users', {}, { headers });
   const toggleStatus = (payload, headers) => {
     const { user_id } = payload;

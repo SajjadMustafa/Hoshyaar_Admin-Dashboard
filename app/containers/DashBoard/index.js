@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.css';
 import { createStructuredSelector } from 'reselect';
 import { get } from 'lodash';
-import { Table, Button } from 'reactstrap';
+import { Table, Button,Badge } from 'reactstrap';
 import MyNavbar from '../MyNavbar';
 import Actions from '../../redux/Actions';
 
@@ -45,10 +45,8 @@ class DashBoard extends Component {
     return (
       <div>
         <MyNavbar moveTo={this.moveto} />
-        {get(this.props, 'allUsers').map(user => (
-          <h1>{console.log('user: ', user)}</h1>
-        ))}
-        <Table responsive>
+        <h2><Badge color="secondary">Users</Badge></h2>
+        <Table bordered>
           <thead>
             <tr>
               <th>#</th>
