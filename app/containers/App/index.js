@@ -10,8 +10,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import HomePage from 'containers/HomePage/Loadable';
-import DashBoard from 'containers/DashBoard/Loadable'
+import AllSchool from 'containers/AllSchool/Loadable';
+import AllReports from 'containers/AllReport/Loadable';
+import DashBoard from 'containers/DashBoard/Loadable';
 
 // import GlobalStyle from '../../backup/global-styles';
 
@@ -19,7 +20,9 @@ export default function App() {
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/allreports" component={AllReports} />
+        <Route exact path="/allschool" component={AllSchool} />
+        <Route exact path="/" component={DashBoard} />
       </Switch>
       {/* <GlobalStyle /> */}
     </div>
